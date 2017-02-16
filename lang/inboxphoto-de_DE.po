@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: inbox.photo helper\n"
+"POT-Creation-Date: 2017-02-09 22:57+0100\n"
+"PO-Revision-Date: 2017-02-09 22:59+0100\n"
+"Last-Translator: Carl Conrad <carl@koffeeware.com>\n"
+"Language-Team: Carl Conrad <carl@koffeeware.com>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: inboxphoto.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: actions.php:19 actions.php:38
+msgid "Order my product"
+msgstr "Mein Produkt bestellen"
+
+#: actions.php:55 widget.php:105
+msgid "Product not supported."
+msgstr "Produkt nicht unterstützt."
+
+#: actions.php:70 widget.php:63
+msgid "Price:"
+msgstr "Preis:"
+
+#: actions.php:76
+msgid "Category snippet not supported."
+msgstr "Kategorie-Snippet nicht unterstützt."
+
+#: settings.php:15
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: settings.php:19
+msgid "Your inbox.photo environment"
+msgstr "Ihre inbox.photo Umgebung"
+
+#: settings.php:21
+msgid "You need to be connected to a valid inbox.photo account."
+msgstr ""
+
+#: settings.php:36
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: settings.php:46
+msgid "Your shop slug is missing or incorrect."
+msgstr ""
+
+#: settings.php:48
+msgid "Your inbox.photo slug (without .inbox.photo)"
+msgstr ""
+
+#: settings.php:48
+msgid "check"
+msgstr "prüfen"
+
+#: settings.php:49
+msgid "Your inbox.photo button default text"
+msgstr ""
+
+#: settings.php:50
+msgid "Your inbox.photo button CSS"
+msgstr ""
+
+#: settings.php:51
+msgid "Your currency"
+msgstr "Ihre Währung"
+
+#: settings.php:56
+msgid "Connect to dashboard"
+msgstr "Verbinden Sie mit dashboard"
+
+#: settings.php:66
+msgid "Success. Your shop name is:"
+msgstr ""
+
+#: settings.php:76
+msgid "Error: the inbox.photo slug seems incorrect. Please fix it."
+msgstr ""
+
+#: widget.php:14 widget.php:16
+msgid "inbox.photo widget"
+msgstr "inbox.photo widget"
+
+#: widget.php:40
+msgid "Prints"
+msgstr "Fotoabzüge"
+
+#: widget.php:77
+msgid "New title"
+msgstr "Neuer Titel"
+
+#: widget.php:89
+msgid "New product"
+msgstr "Neues Produkt"
+
+#: widget.php:95
+msgid "New text"
+msgstr "Neuer Text"
+
+#: widget.php:114
+msgid "Current setting:"
+msgstr "Aktuelle Einstellung:"
+
+#: widget.php:114
+msgid "Category slug:"
+msgstr "Kategorie Slug"
+
+#: widget.php:114
+msgid "Product id:"
+msgstr "Produkt-ID:"
+
+#: widget.php:116
+msgid "Title:"
+msgstr "Titel:"
+
+#: widget.php:121
+msgid "Change to category:"
+msgstr "Kategorie ändern:"
+
+#: widget.php:127
+msgid "Change to product:"
+msgstr "Produkt ändern:"
+
+#: widget.php:129
+msgid "Select category first"
+msgstr "Bitte wählen sie erst eine Kategorie aus."
+
+#: widget.php:133
+msgid "Button text:"
+msgstr "Schaltfläche Text:"
+
+#: widget.php:143
+msgid "Select a category"
+msgstr "Wählen Sie eine Kategorie"
+
+#: widget.php:158
+msgid "Select a product"
+msgstr "Wählen Sie ein Produkt"
+
+#. Plugin Name of the plugin/theme
+msgid "inbox.photo helper"
+msgstr "inbox.photo Helfer"
+
+#. Description of the plugin/theme
+msgid "Streamline integration of inbox.photo."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "inbox.photo by Koffeeware"
+msgstr "inbox.photo von Koffeeware"
+
+#. Author URI of the plugin/theme
+msgid "https://inbox.photo"
+msgstr "https://inbox.photo"
+
+#~ msgid "Documentation"
+#~ msgstr "Dokumentation"
