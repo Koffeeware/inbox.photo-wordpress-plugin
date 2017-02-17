@@ -2,7 +2,7 @@
 /*
 Plugin Name: inbox.photo helper
 Description: Streamline integration of inbox.photo.
-Version: 1.8.2
+Version: 1.8.3
 Author: inbox.photo by Koffeeware
 Author URI: https://inbox.photo
 License: GPL2

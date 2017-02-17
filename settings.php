@@ -21,7 +21,6 @@ function inbox_photo_options_page_html() {
 		echo '<p class="inbox-warning"><span class="dashicons dashicons-warning"></span> <strong>'. __( 'You need to be connected to a valid inbox.photo account.', 'inboxphoto' ).'</strong></p>';
 	}
 	else {
-/*
 		echo '<h2>'.__('Documentation','inboxphoto').'</h2>';
 		echo '<p>'.__('This plug-in is designed to help you link your Wordpress web site to your inbox.photo based web shop by providing shortcodes for your ordering pages.','inboxphoto').'</p>';
 		echo '<p>'.__('Short code usage example for product category button: <code>[inboxphoto_button category="prints"]</code>','inboxphoto').'</p>';
@@ -30,7 +29,6 @@ function inbox_photo_options_page_html() {
 		echo '<p>'.__('Short code usage example for product snippet: <code>[inboxphoto_snippet category="calendars" product="5678"]</code>','inboxphoto').'</p>';
 		echo '<p>'.__('CSS example: <code>.inboxphotobutton { background-color: lightgrey; border-radius: 5px; font-size: 85%; font-weight: bold; color: black; }</code>','inboxphoto').'</p>';
 		echo '<p>'.__('A product sidebar widget is also available. Visit the <a href="widgets.php">widget section</a>.','inboxphoto').'</p>';
-*/
 	}
 
 	echo '<h2>'.__('Settings','inboxphoto').'</h2>';

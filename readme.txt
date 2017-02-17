@@ -3,7 +3,7 @@ Contributors: carlconrad
 Tags: calendars, canvas, cards, ecommerce, editor, koffeeware, jpeg, mugs, pdf, personalisation, photo, photobooks, pictures, posters, prints, puzzles, shortcode, sidebar, t-shirts, widget
 Requires at least: 4.6
 Tested up to: 4.7
-Stable tag: 1.8.2
+Stable tag: 1.8.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,7 +35,7 @@ The generated buttons, snippets and sidebar widgets should open your inbox.photo
 
 == Changelog ==
 
-= 1.8.2 =
+= 1.8.3 =
 * Various fixes
 
 = 1.8 =
