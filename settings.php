@@ -7,7 +7,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 function inbox_photo_options_page() {
-    add_options_page( 'inbox.photo' , 'inbox.photo' , 'manage_options' , 'inbox_photo' , 'inbox_photo_options_page_html' );
+	if (  get_option( 'inbox_photo_slug' ) || get_option( 'inbox_photo_api_token' ) ) {
+		$jsonurl = 'https://'. get_option( 'inbox_photo_slug' ) .'.inbox.photo/api/'. get_option( 'inbox_photo_api_token' ) .'/orders/';
+		$data = json_decode(file_get_contents($jsonurl));
+		$count = 0;
+		foreach($data as $value) {
+			if($value->status == "NEW") $count++;
+		}
+		echo $count;
+	}
+	if ( $count > 0 ) {
+		$menu_entry = 'inbox.photo <span class="update-plugins count-1"><span class="update-count">'.$count.'</span></span>';
+	}
+	else {
+		$menu_entry = 'inbox.photo';
+	}
+    add_options_page( 'inbox.photo' , $menu_entry , 'manage_options' , 'inbox_photo' , 'inbox_photo_options_page_html' );
 }
 
 function inbox_photo_options_page_html() {
@@ -44,16 +59,35 @@ function inbox_photo_options_page_html() {
 		echo '<tr><td colspan="2"><strong>'.__('Your shop slug is missing or incorrect.','inboxphoto').'</strong></td></tr>';
 	}
 	echo '<tr><td><label for="inbox_photo_slug">'.__('Your inbox.photo slug (without .inbox.photo)','inboxphoto').'</td><td><input name="inbox_photo_slug" type="text" id="inbox_photo_slug" value="'. get_option( 'inbox_photo_slug' ) .'" />.inbox.photo</label> (<span id="inboxphotourlcheck"><a href="#" onclick="CheckInboxPhotoShopURL()">'.__('check','inboxphoto').'</a></span>)</td></tr>';
+	echo '<tr><td><label for="inbox_photo_api_token">'.__('Your inbox.photo API token','inboxphoto').'</td><td><input name="inbox_photo_api_token" type="text" id="inbox_photo_api_token" value="'. get_option( 'inbox_photo_api_token' ) .'" /></label></td></tr>';
 	echo '<tr><td><label for="inbox_photo_button_text">'.__('Your inbox.photo button default text','inboxphoto').'</td><td><input name="inbox_photo_button_text" type="text" id="inbox_photo_button_text" value="'. get_option( 'inbox_photo_button_text' ) .'" /></label></td></tr>';
 	echo '<tr><td><label for="inbox_photo_button_css">'.__('Your inbox.photo button CSS','inboxphoto').'</td><td><textarea name="inbox_photo_button_css" cols="80" id="inbox_photo_button_css">'. get_option( 'inbox_photo_button_css' ) .'</textarea></label></td></tr>';
 	echo '<tr><td><label for="inbox_photo_currency">'.__('Your currency','inboxphoto').'</td><td><input name="inbox_photo_currency" type="hidden" id="inbox_photo_currency" value="'. $currency .'" /><span id="inbox_photo_currency_comment">'. get_option( 'inbox_photo_currency' ) .'</span></label></td></tr>';
 	echo '</table>';
 	submit_button();
 	echo '</form>';
+
+	if (  get_option( 'inbox_photo_slug' ) || get_option( 'inbox_photo_api_token' ) ) {
+		$jsonurl = 'https://'. get_option( 'inbox_photo_slug' ) .'.inbox.photo/api/'. get_option( 'inbox_photo_api_token' ) .'/orders/';
+		$data = json_decode(file_get_contents($jsonurl));
+		$count = 0;
+		$new = 0;
+		$opened = 0;
+		$downloaded = 0;
+		foreach($data as $value) {
+			$count++;
+			if($value->status == "NEW") $new++;
+			if($value->status == "OPENED") $opened++;
+			if($value->status == "DOWNLOADED") $downloaded++;
+		}
+		echo '<p>'.__('Currently on your shop:','inboxphoto').' '.$count.' '.__('orders:','inboxphoto').' '.$new.' '.__('new orders','inboxphoto').', '.$opened.' '.__('opened orders','inboxphoto').', '.$downloaded.' '.__('downloaded orders','inboxphoto').'.</p>';
+	}
+
 	if ( $array ) {
 		echo '<a href="https://inbox.photo/dashboard/"><button>'.__('Connect to dashboard','inboxphoto').'</button></a>';
 	}
 	echo '</div>';
+
 	?>
 	<script>
 	function CheckInboxPhotoShopURL() {
@@ -82,6 +116,7 @@ function inbox_photo_options_page_html() {
 
 function register_inbox_photo_settings() {
 	register_setting( 'inbox-photo', 'inbox_photo_slug' );
+	register_setting( 'inbox-photo', 'inbox_photo_api_token' );
 	register_setting( 'inbox-photo', 'inbox_photo_button_css' );
 	register_setting( 'inbox-photo', 'inbox_photo_button_text' );
 	register_setting( 'inbox-photo', 'inbox_photo_currency' );

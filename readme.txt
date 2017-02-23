@@ -1,9 +1,9 @@
 === Plugin Name ===
-Contributors: carlconrad
-Tags: calendars, canvas, cards, ecommerce, editor, koffeeware, jpeg, mugs, pdf, personalisation, photo, photobooks, pictures, posters, prints, puzzles, shortcode, sidebar, t-shirts, widget
+Contributors: koffeeware, carlconrad
+Tags: calendar, calendars, canvas, cards, ecommerce, editor, koffeeware, jpeg, mugs, pdf, personalisation, photo, photobook, photobooks, pictures, posters, prints, puzzle, puzzles, shortcode, sidebar, t-shirt, t-shirts, widget
 Requires at least: 4.6
 Tested up to: 4.7
-Stable tag: 1.8.3
+Stable tag: 1.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,8 @@ inbox.photo simplifies click and collect ordering of photo products.
 == Description ==
 
 This plug-in is designed to help you link your Wordpress web site to your inbox.photo based web shop by providing shortcodes, snippets and sidebar widgets for your photo products ordering pages.
+
+If connected via the inbox.photo API (API token is required), order status information and notifications are also available.
 
 inbox.photo provides a simple way to customize and order personalized products such as prints, calendars, photobooks, canvas, collages, gifts, t-shirts, mugs and much more. inbox.photo enables set up of simple click and collect web stores.
 
@@ -34,6 +36,10 @@ The generated buttons, snippets and sidebar widgets should open your inbox.photo
 1. Main and only screen.
 
 == Changelog ==
+
+= 1.9 =
+* Added connection the inbox.photo API
+* Added order status information and notification
 
 = 1.8.3 =
 * Various fixes
