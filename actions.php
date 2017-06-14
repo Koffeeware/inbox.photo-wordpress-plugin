@@ -1,7 +1,7 @@
 <?php
 /* Resulting actions */
 
-if ( ! defined( 'ABSPATH' ) ) { 
+if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
@@ -15,12 +15,12 @@ function shortcode_inbox_photo_button_func( $atts ) {
 	$slug = get_option( 'inbox_photo_slug' );
 	if ( get_option( 'inbox_photo_button_text' ) )
 		$text = get_option( 'inbox_photo_button_text' );
-    else
+  else
 		$text = __('Order my product','inboxphoto');
 	$a = shortcode_atts( array(
-        'category' => '',
-		'product' => '',
-		'text' => ''
+    'category' => '',
+    'product' => '',
+    'text' => ''
     ), $atts );
 	if ( $a['text'] ) $text = $a['text'];
 	$button = '<a href="https://inbox.photo/shop/'.$slug.'/app/'.$a['category'].'/';
@@ -34,13 +34,13 @@ function shortcode_inbox_photo_snippet_func( $atts ) {
 	$currency = get_option( 'inbox_photo_currency' );
 	if ( get_option( 'inbox_photo_button_text' ) )
 		$text = get_option( 'inbox_photo_button_text' );
-    else
+  else
 		$text = __('Order my product','inboxphoto');
-	$a = shortcode_atts( array(
-        'category' => '',
-		'product' => '',
-		'text' => ''
-    ), $atts );
+  $a = shortcode_atts( array(
+    'category' => '',
+    'product' => '',
+    'text' => ''
+  ), $atts );
 	if ( $a['text'] ) $text = $a['text'];
 	$order_url = 'https://inbox.photo/shop/'.$slug.'/app/'.$a['category'].'/';
 	if ( $a['product'] ) {
@@ -49,10 +49,9 @@ function shortcode_inbox_photo_snippet_func( $atts ) {
 		$array = json_decode(file_get_contents($url));
 		$type = $array->type;
 		switch ($type) {
-// Example: https://carl-koffeeware.inbox.photo/api/prints/
 			case 'prints':
 			case 'large_prints':
-				$snippet = '<p>'. __('Product not supported.') .'</p>';
+				$snippet = '<p>'. __('Product not supported.','inboxphoto') .'</p>';
 				break;
 			case 'collages':
 			case 'canvas_prints':
@@ -60,7 +59,6 @@ function shortcode_inbox_photo_snippet_func( $atts ) {
 			case 'photo_books':
 			case 'cards':
 			case 'calendars':
-// Example: https://carl-koffeeware.inbox.photo/api/calendriers/6397/
 				$name = $array->product->name;
 				$price = $array->product->unit_price;
 				$snippet = '<div itemscope itemtype="http://schema.org/Product">';
@@ -73,7 +71,7 @@ function shortcode_inbox_photo_snippet_func( $atts ) {
 		}
 	}
 	else {
-		$snippet = '<p>'. __('Category snippet not supported.') .'</p>';
+		$snippet = '<p>'. __('Category snippet not supported.','inboxphoto') .'</p>';
 	}
 	return $snippet;
 }

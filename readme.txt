@@ -1,21 +1,21 @@
 === Plugin Name ===
 Contributors: koffeeware, carlconrad
-Tags: calendar, calendars, canvas, cards, ecommerce, editor, koffeeware, jpeg, mugs, pdf, personalisation, photo, photobook, photobooks, pictures, posters, prints, puzzle, puzzles, shortcode, sidebar, t-shirt, t-shirts, widget
+Tags: photo, photobook, prints, calendar, ecommerce, cards, mugs, t-shirt
 Requires at least: 4.6
-Tested up to: 4.7
-Stable tag: 1.9
+Tested up to: 4.8
+Stable tag: 1.9.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-inbox.photo simplifies click and collect ordering of photo products.
+inbox.photo simplifies click and collect ordering of personalized photo products.
 
 == Description ==
 
-This plug-in is designed to help you link your Wordpress web site to your inbox.photo based web shop by providing shortcodes, snippets and sidebar widgets for your photo products ordering pages.
-
-If connected via the inbox.photo API (API token is required), order status information and notifications are also available.
-
 inbox.photo provides a simple way to customize and order personalized products such as prints, calendars, photobooks, canvas, collages, gifts, t-shirts, mugs and much more. inbox.photo enables set up of simple click and collect web stores.
+
+This plug-in is designed to help you link your Wordpress web site to your inbox.photo based web shop by providing shortcodes, snippets and sidebar widgets for your photo products customization ordering pages.
+
+If connected via the inbox.photo API (API token is required), additional order status information and notifications are also available.
 
 <a href="https://inbox.photo/" title="Register for free to inbox.photo">Register for free to inbox.photo</a> and get 500 free credits for set-up and testing.
 
@@ -27,15 +27,35 @@ inbox.photo provides a simple way to customize and order personalized products s
 
 == Frequently Asked Questions ==
 
+= Is inbox.photo free? =
+
+No. We only charge for products ordered according to this <a href="https://inbox.photo/pricing/">price list</a>.
+
 = How can I test the plug-in runs effectively? =
 
 The generated buttons, snippets and sidebar widgets should open your inbox.photo web shop in the product customization page.
+
+= Do I need access to the inbox.photo API? =
+
+No. Connection to the inbox.photo API only provides additional order status information and notifications. All other functions operated without required a connection to the inbox.photo API.
 
 == Screenshots ==
 
 1. Main and only screen.
 
 == Changelog ==
+
+= 1.9.7 =
+* Added uninstall database cleanup
+
+= 1.9.6 =
+* Tested with WordPress 4.8
+
+= 1.9.5 =
+* Updated readme.txt with API clarification
+
+= 1.9.4 =
+* Various fixes
 
 = 1.9 =
 * Added connection the inbox.photo API

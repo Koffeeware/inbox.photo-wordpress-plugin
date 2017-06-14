@@ -2,12 +2,12 @@
 /* Options management */
 
 
-if ( ! defined( 'ABSPATH' ) ) { 
+if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
 function inbox_photo_options_page() {
-	if (  get_option( 'inbox_photo_slug' ) || get_option( 'inbox_photo_api_token' ) ) {
+	if (  get_option( 'inbox_photo_slug' ) && get_option( 'inbox_photo_api_token' ) ) {
 		$jsonurl = 'https://'. get_option( 'inbox_photo_slug' ) .'.inbox.photo/api/'. get_option( 'inbox_photo_api_token' ) .'/orders/';
 		$data = json_decode(file_get_contents($jsonurl));
 		$count = 0;
@@ -22,7 +22,7 @@ function inbox_photo_options_page() {
 	else {
 		$menu_entry = 'inbox.photo';
 	}
-    add_options_page( 'inbox.photo' , $menu_entry , 'manage_options' , 'inbox_photo' , 'inbox_photo_options_page_html' );
+  add_options_page( 'inbox.photo' , $menu_entry , 'manage_options' , 'inbox_photo' , 'inbox_photo_options_page_html' );
 }
 
 function inbox_photo_options_page_html() {
@@ -58,16 +58,32 @@ function inbox_photo_options_page_html() {
 	if ( ! ( $array ) ) {
 		echo '<tr><td colspan="2"><strong>'.__('Your shop slug is missing or incorrect.','inboxphoto').'</strong></td></tr>';
 	}
-	echo '<tr><td><label for="inbox_photo_slug">'.__('Your inbox.photo slug (without .inbox.photo)','inboxphoto').'</td><td><input name="inbox_photo_slug" type="text" id="inbox_photo_slug" value="'. get_option( 'inbox_photo_slug' ) .'" />.inbox.photo</label> (<span id="inboxphotourlcheck"><a href="#" onclick="CheckInboxPhotoShopURL()">'.__('check','inboxphoto').'</a></span>)</td></tr>';
-	echo '<tr><td><label for="inbox_photo_api_token">'.__('Your inbox.photo API token','inboxphoto').'</td><td><input name="inbox_photo_api_token" type="text" id="inbox_photo_api_token" value="'. get_option( 'inbox_photo_api_token' ) .'" /></label></td></tr>';
-	echo '<tr><td><label for="inbox_photo_button_text">'.__('Your inbox.photo button default text','inboxphoto').'</td><td><input name="inbox_photo_button_text" type="text" id="inbox_photo_button_text" value="'. get_option( 'inbox_photo_button_text' ) .'" /></label></td></tr>';
-	echo '<tr><td><label for="inbox_photo_button_css">'.__('Your inbox.photo button CSS','inboxphoto').'</td><td><textarea name="inbox_photo_button_css" cols="80" id="inbox_photo_button_css">'. get_option( 'inbox_photo_button_css' ) .'</textarea></label></td></tr>';
-	echo '<tr><td><label for="inbox_photo_currency">'.__('Your currency','inboxphoto').'</td><td><input name="inbox_photo_currency" type="hidden" id="inbox_photo_currency" value="'. $currency .'" /><span id="inbox_photo_currency_comment">'. get_option( 'inbox_photo_currency' ) .'</span></label></td></tr>';
+	echo '<tr>';
+  echo '<td><label for="inbox_photo_slug">'.__('Your inbox.photo slug (without .inbox.photo)','inboxphoto').'</td>';
+  echo '<td><input name="inbox_photo_slug" type="text" id="inbox_photo_slug" value="'. get_option( 'inbox_photo_slug' ) .'" />.inbox.photo</label> (<span id="inboxphotourlcheck"><a href="#" onclick="CheckInboxPhotoShopURL()">'.__('check','inboxphoto').'</a></span>)</td>';
+  echo '</tr>';
+	echo '<tr>';
+  echo '<td>';
+  echo '<label for="inbox_photo_api_token">'.__('Your inbox.photo API token','inboxphoto').'</td>';
+  echo '<td><input name="inbox_photo_api_token" type="text" id="inbox_photo_api_token" value="'. get_option( 'inbox_photo_api_token' ) .'" /></label></td>';
+  echo '</tr>';
+	echo '<tr>';
+  echo '<td><label for="inbox_photo_button_text">'.__('Your inbox.photo button default text','inboxphoto').'</td>';
+  echo '<td><input name="inbox_photo_button_text" type="text" id="inbox_photo_button_text" value="'. get_option( 'inbox_photo_button_text' ) .'" /></label></td>';
+  echo '</tr>';
+	echo '<tr>';
+  echo '<td><label for="inbox_photo_button_css">'.__('Your inbox.photo button CSS','inboxphoto').'</td>';
+  echo '<td><textarea name="inbox_photo_button_css" cols="80" id="inbox_photo_button_css">'. get_option( 'inbox_photo_button_css' ) .'</textarea></label></td>';
+  echo '</tr>';
+	echo '<tr>';
+  echo '<td><label for="inbox_photo_currency">'.__('Your currency','inboxphoto').'</td>';
+  echo '<td><input name="inbox_photo_currency" type="hidden" id="inbox_photo_currency" value="'. $currency .'" /><span id="inbox_photo_currency_comment">'. get_option( 'inbox_photo_currency' ) .'</span></label></td>';
+  echo '</tr>';
 	echo '</table>';
 	submit_button();
 	echo '</form>';
 
-	if (  get_option( 'inbox_photo_slug' ) || get_option( 'inbox_photo_api_token' ) ) {
+	if (  get_option( 'inbox_photo_slug' ) && get_option( 'inbox_photo_api_token' ) ) {
 		$jsonurl = 'https://'. get_option( 'inbox_photo_slug' ) .'.inbox.photo/api/'. get_option( 'inbox_photo_api_token' ) .'/orders/';
 		$data = json_decode(file_get_contents($jsonurl));
 		$count = 0;

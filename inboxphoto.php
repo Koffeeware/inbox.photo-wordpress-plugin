@@ -2,14 +2,14 @@
 /*
 Plugin Name: inbox.photo helper
 Description: Streamline integration of inbox.photo.
-Version: 1.9
+Version: 1.9.8
 Author: inbox.photo by Koffeeware
 Author URI: https://inbox.photo
 License: GPL2
 Text Domain: inboxphoto
 */
 
-if ( ! defined( 'ABSPATH' ) ) { 
+if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
@@ -20,7 +20,7 @@ require_once( 'widget.php' );
 if ( is_admin() ){
 	add_action( 'admin_menu' , 'inbox_photo_options_page' );
 	add_action( 'admin_init' , 'register_inbox_photo_settings' );
-	add_action( 'admin_init' , 'inboxphoto_scripts' );
+//	add_action( 'admin_init' , 'inboxphoto_scripts' );
 }
 else {
 	add_action( 'wp_head' , 'hook_inbox_photo_css' );
